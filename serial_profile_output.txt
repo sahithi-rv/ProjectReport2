@@ -1,0 +1,156 @@
+
+WARNING: Disabling instrumentation of source code.
+         Please either configure with -pdt=<dir> option
+         or switch to compiler based instrumentation with -optCompInst
+
+
+Debug: PDT failed, switching to compiler-based instrumentation
+
+Debug: Using compiler-based instrumentation
+
+
+Debug: Compiling (Individually) with Instrumented Code
+Executing> /opt/rh/devtoolset-4/root/usr/bin/g++ -std=c++11 -g -I. -c ./cg.cpp -DPROFILING_ON -DTAU_GNU -DTAU_DOT_H_LESS_HEADERS -DTAU_LINUX_TIMERS -DTAU_LARGEFILE -D_LARGEFILE64_SOURCE -DTAU_BFD -DHAVE_TR1_HASH_MAP -DTAU_SS_ALLOC_SUPPORT -DEBS_CLOCK_RES=1 -DTAU_STRSIGNAL_OK -DTAU_TRACK_LD_LOADER -I/opt/aci/sw/tau/2.27_gcc-5.3.1/include -DPROFILING_ON -DTAU_GNU -DTAU_DOT_H_LESS_HEADERS -DTAU_LINUX_TIMERS -DTAU_LARGEFILE -D_LARGEFILE64_SOURCE -DTAU_BFD -DHAVE_TR1_HASH_MAP -DTAU_SS_ALLOC_SUPPORT -DEBS_CLOCK_RES=1 -DTAU_STRSIGNAL_OK -DTAU_TRACK_LD_LOADER -I/opt/aci/sw/tau/2.27_gcc-5.3.1/include -o cg.o -g -finstrument-functions -finstrument-functions-exclude-file-list=/usr/include
+
+
+Debug: Linking (Together) object files
+Executing> /opt/rh/devtoolset-4/root/usr/bin/g++ -std=c++11 -g cg.o -L/opt/aci/sw/tau/2.27_gcc-5.3.1/x86_64/lib -ltau -lbfd -Wl,--export-dynamic -lrt -ldl -lm -L/opt/rh/devtoolset-4/root/usr/lib/gcc/x86_64-redhat-linux/5.3.1/ -lstdc++ -lgcc_s -L/opt/aci/sw/tau/2.27_gcc-5.3.1/x86_64/lib/static -o tauperf_serial
+
+64
+Using shared
+8
+exec time:135
+iterations: 17
+Reading Profile files in profile.*
+
+NODE 0;CONTEXT 0;THREAD 0:
+---------------------------------------------------------------------------------------
+%Time    Exclusive    Inclusive       #Call      #Subrs  Inclusive Name
+              msec   total msec                          usec/call 
+---------------------------------------------------------------------------------------
+100.0            3            3           1           2       3916 .TAU application
+ 10.3        0.178        0.404           1         103        404 main 
+  4.4        0.171        0.171           1           0        171 _Z11get_vectorBPcPPf 
+  0.5        0.018        0.018          17           0          1 _Z6matmulPPfS0_ 
+  0.4        0.008        0.014           1           1         14 _GLOBAL__sub_I_n 
+  0.2        0.009        0.009          17           0          1 _Z11vector_add2PPffS0_ 
+  0.2        0.007        0.007          17           0          0 _Z10vector_subPPffS0_ 
+  0.2        0.007        0.007          17           0          0 _Z11vector_add1PPffS0_ 
+  0.2        0.007        0.007          17           0          0 _Z12dot_product1PPf 
+  0.2        0.007        0.007          17           0          0 _Z12dot_product2PPfS0_ 
+  0.2        0.006        0.006           1           0          6 __static_initialization_and_destruction_0 
+256
+Using shared
+16
+exec time:409
+iterations: 34
+Reading Profile files in profile.*
+
+NODE 0;CONTEXT 0;THREAD 0:
+---------------------------------------------------------------------------------------
+%Time    Exclusive    Inclusive       #Call      #Subrs  Inclusive Name
+              msec   total msec                          usec/call 
+---------------------------------------------------------------------------------------
+100.0            3            4           1           2       4367 .TAU application
+ 20.5        0.182        0.896           1         205        896 main 
+  8.9        0.388        0.388           1           0        388 _Z11get_vectorBPcPPf 
+  2.7        0.117        0.117          34           0          3 _Z6matmulPPfS0_ 
+  1.1        0.047        0.047          34           0          1 _Z11vector_add2PPffS0_ 
+  1.0        0.044        0.044          34           0          1 _Z10vector_subPPffS0_ 
+  0.9        0.041        0.041          34           0          1 _Z11vector_add1PPffS0_ 
+  0.9        0.039        0.039          34           0          1 _Z12dot_product2PPfS0_ 
+  0.9        0.038        0.038          34           0          1 _Z12dot_product1PPf 
+  0.3        0.008        0.015           1           1         15 _GLOBAL__sub_I_n 
+  0.2        0.007        0.007           1           0          7 __static_initialization_and_destruction_0 
+1024
+Using shared
+32
+exec time:2272
+iterations: 61
+Reading Profile files in profile.*
+
+NODE 0;CONTEXT 0;THREAD 0:
+---------------------------------------------------------------------------------------
+%Time    Exclusive    Inclusive       #Call      #Subrs  Inclusive Name
+              msec   total msec                          usec/call 
+---------------------------------------------------------------------------------------
+100.0            3            6           1           2       6481 .TAU application
+ 47.3         0.23            3           1         367       3068 main 
+ 12.2        0.788        0.788          61           0         13 _Z6matmulPPfS0_ 
+ 10.7        0.691        0.691           1           0        691 _Z11get_vectorBPcPPf 
+  4.6        0.296        0.296          61           0          5 _Z11vector_add1PPffS0_ 
+  4.6        0.295        0.295          61           0          5 _Z10vector_subPPffS0_ 
+  4.5        0.291        0.291          61           0          5 _Z11vector_add2PPffS0_ 
+  3.7        0.239        0.239          61           0          4 _Z12dot_product2PPfS0_ 
+  3.7        0.238        0.238          61           0          4 _Z12dot_product1PPf 
+  0.2        0.008        0.014           1           1         14 _GLOBAL__sub_I_n 
+  0.1        0.006        0.006           1           0          6 __static_initialization_and_destruction_0 
+1600
+Using shared
+40
+exec time:4589
+iterations: 82
+Reading Profile files in profile.*
+
+NODE 0;CONTEXT 0;THREAD 0:
+---------------------------------------------------------------------------------------
+%Time    Exclusive    Inclusive       #Call      #Subrs  Inclusive Name
+              msec   total msec                          usec/call 
+---------------------------------------------------------------------------------------
+100.0            3            9           1           2       9129 .TAU application
+ 62.0        0.284            5           1         493       5656 main 
+ 17.9            1            1          82           0         20 _Z6matmulPPfS0_ 
+ 10.4        0.952        0.952           1           0        952 _Z11get_vectorBPcPPf 
+  6.7        0.608        0.608          82           0          7 _Z10vector_subPPffS0_ 
+  6.6        0.606        0.606          82           0          7 _Z11vector_add1PPffS0_ 
+  6.5        0.596        0.596          82           0          7 _Z11vector_add2PPffS0_ 
+  5.3        0.488        0.488          82           0          6 _Z12dot_product2PPfS0_ 
+  5.3        0.487        0.487          82           0          6 _Z12dot_product1PPf 
+  0.2        0.007        0.014           1           1         14 _GLOBAL__sub_I_n 
+  0.1        0.007        0.007           1           0          7 __static_initialization_and_destruction_0 
+10816
+Using shared
+104
+exec time:69798
+iterations: 198
+Reading Profile files in profile.*
+
+NODE 0;CONTEXT 0;THREAD 0:
+---------------------------------------------------------------------------------------
+%Time    Exclusive    Inclusive       #Call      #Subrs  Inclusive Name
+              msec   total msec                          usec/call 
+---------------------------------------------------------------------------------------
+100.0            3           78           1           2      78514 .TAU application
+ 95.4        0.788           74           1        1189      74928 main 
+ 33.6           26           26         198           0        133 _Z6matmulPPfS0_ 
+ 12.1            9            9         198           0         48 _Z10vector_subPPffS0_ 
+ 11.9            9            9         198           0         47 _Z11vector_add1PPffS0_ 
+ 11.8            9            9         198           0         47 _Z11vector_add2PPffS0_ 
+  9.5            7            7         198           0         38 _Z12dot_product2PPfS0_ 
+  9.5            7            7         198           0         38 _Z12dot_product1PPf 
+  6.1            4            4           1           0       4758 _Z11get_vectorBPcPPf 
+  0.0        0.008        0.014           1           1         14 _GLOBAL__sub_I_n 
+  0.0        0.006        0.006           1           0          6 __static_initialization_and_destruction_0 
+250000
+Using shared
+500
+exec time:10369211
+iterations: 1299
+Reading Profile files in profile.*
+
+NODE 0;CONTEXT 0;THREAD 0:
+---------------------------------------------------------------------------------------
+%Time    Exclusive    Inclusive       #Call      #Subrs  Inclusive Name
+              msec   total msec                          usec/call 
+---------------------------------------------------------------------------------------
+100.0            3       10,482           1           2   10482049 .TAU application
+100.0           14       10,478           1        7795   10478583 main 
+ 38.2        4,004        4,004        1299           0       3083 _Z6matmulPPfS0_ 
+ 13.5        1,412        1,412        1299           0       1087 _Z10vector_subPPffS0_ 
+ 13.1        1,374        1,374        1299           0       1058 _Z11vector_add1PPffS0_ 
+ 13.0        1,367        1,367        1299           0       1053 _Z11vector_add2PPffS0_ 
+ 10.5        1,102        1,102        1299           0        849 _Z12dot_product2PPfS0_ 
+ 10.5        1,098        1,098        1299           0        846 _Z12dot_product1PPf 
+  1.0          103          103           1           0     103487 _Z11get_vectorBPcPPf 
+  0.0        0.008        0.015           1           1         15 _GLOBAL__sub_I_n 
+  0.0        0.007        0.007           1           0          7 __static_initialization_and_destruction_0 
